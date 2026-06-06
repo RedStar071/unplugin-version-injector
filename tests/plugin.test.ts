@@ -39,7 +39,7 @@ describe('VersionInjector', () => {
       packageJsonPath: resolve(import.meta.dirname, '../package.json')
     });
 
-    expect(result).toBe("export const version = '2.0.0'");
+    expect(result).toBe("export const version = '0.0.1'");
   });
 
   test('replaces inject tag with current date', async () => {
@@ -64,7 +64,7 @@ describe('VersionInjector', () => {
       packageJsonPath: resolve(import.meta.dirname, '../package.json')
     });
 
-    expect(result).toBe("export const version = '2.0.0'");
+    expect(result).toBe("export const version = '0.0.1'");
   });
 
   test('replaces multiple occurrences', async () => {
@@ -72,7 +72,7 @@ describe('VersionInjector', () => {
       packageJsonPath: resolve(import.meta.dirname, '../package.json')
     });
 
-    expect(result).toBe("const a = '2.0.0'; const b = '2.0.0';");
+    expect(result).toBe("const a = '0.0.1'; const b = '0.0.1';");
   });
 
   test('works with CSS content', async () => {
@@ -84,7 +84,7 @@ describe('VersionInjector', () => {
 
     const result = await handler(".myClass { content: '[VI]{{inject}}[/VI]'; }", 'styles.css');
 
-    expect(result).toBe(".myClass { content: '2.0.0'; }");
+    expect(result).toBe(".myClass { content: '0.0.1'; }");
   });
 
   test('returns null when package.json not found', async () => {
