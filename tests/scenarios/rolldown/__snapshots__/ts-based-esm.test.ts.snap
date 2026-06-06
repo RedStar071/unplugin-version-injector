@@ -3,15 +3,15 @@
 exports[`TS based ESM > GIVEN no plugin options THEN injects version 1`] = `
 "//#region tests/fixtures/build-in/typescript.mts
 const version = "2.0.0";
-
 //#endregion
-export { version };"
+export { version };
+"
 `;
 
 exports[`TS based ESM > GIVEN versionOrCurrentDate = "current-date" THEN injects current date 1`] = `
 "//#region tests/fixtures/build-in/typescript.mts
 const version = "2022-02-01T14:30:30.000Z";
-
 //#endregion
-export { version };"
+export { version };
+"
 `;

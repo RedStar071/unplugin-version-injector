@@ -16,7 +16,7 @@ exports[`TS based CJS > GIVEN versionOrCurrentDate = "current-date" THEN injects
 /******/ 	"use strict";
 /* unused harmony export version */
 
-const version = "2026-06-06T11:26:21.697Z";
+const version = "2022-02-01T14:30:30.000Z";
 
 /******/ })()
 ;"
