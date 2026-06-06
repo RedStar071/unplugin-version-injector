@@ -1,4 +1,4 @@
-name: unplugin-version-injector
+name: '@redstardev/unplugin-version-injector'
 packagePath: .
 commitMessageTemplate: 'chore(release): release {{new-version}}'
 tagTemplate: v{{new-version}}

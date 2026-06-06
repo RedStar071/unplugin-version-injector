@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">unplugin-version-injector</h1>
+  <h1 align="center">@redstardev/unplugin-version-injector</h1>
   <p align="center">
     <strong>A universal plugin to inject your application's version number or today's date into your files</strong>
   </p>
@@ -7,8 +7,8 @@
     <a href="https://github.com/RedStar071/unplugin-version-injector/blob/main/LICENSE.md">
       <img src="https://img.shields.io/github/license/RedStar071/unplugin-version-injector" alt="License" />
     </a>
-    <a href="https://www.npmjs.com/package/unplugin-version-injector">
-      <img src="https://img.shields.io/npm/v/unplugin-version-injector?color=crimson&logo=npm&style=flat-square" alt="npm version" />
+    <a href="https://www.npmjs.com/package/@redstardev/unplugin-version-injector">
+      <img src="https://img.shields.io/npm/v/@redstardev/unplugin-version-injector?color=crimson&logo=npm&style=flat-square" alt="npm version" />
     </a>
   </p>
 </p>
@@ -18,7 +18,7 @@ _This plugin was inspired by
 
 **Table of Contents**
 
-- [unplugin-version-injector](#unplugin-version-injector)
+- [@redstardev/unplugin-version-injector](#redstardevunplugin-version-injector)
   - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -69,7 +69,7 @@ bundlers — **Vite**, **Rollup**, **Rolldown**, **esbuild**, **Webpack**,
 You can use the following command to install this package:
 
 ```sh
-pnpm add -D unplugin-version-injector
+pnpm add -D @redstardev/unplugin-version-injector
 ```
 
 > **Requirements:** Node.js >= 20, pnpm >= 10
@@ -90,7 +90,7 @@ The tag will be replaced at build time with the version from your `package.json`
 ```ts
 // vite.config.ts
 import { defineConfig } from 'vite';
-import VersionInjector from 'unplugin-version-injector/vite';
+import VersionInjector from '@redstardev/unplugin-version-injector/vite';
 
 export default defineConfig({
   plugins: [VersionInjector()]
@@ -101,7 +101,7 @@ export default defineConfig({
 
 ```ts
 // rollup.config.ts
-import VersionInjector from 'unplugin-version-injector/rollup';
+import VersionInjector from '@redstardev/unplugin-version-injector/rollup';
 
 export default {
   plugins: [VersionInjector()]
@@ -112,7 +112,7 @@ export default {
 
 ```ts
 // rolldown.config.ts / tsdown.config.ts
-import VersionInjector from 'unplugin-version-injector/rolldown';
+import VersionInjector from '@redstardev/unplugin-version-injector/rolldown';
 
 export default {
   plugins: [VersionInjector()]
@@ -123,7 +123,7 @@ export default {
 
 ```ts
 import { build } from 'esbuild';
-import VersionInjector from 'unplugin-version-injector/esbuild';
+import VersionInjector from '@redstardev/unplugin-version-injector/esbuild';
 
 await build({
   format: 'cjs',
@@ -137,7 +137,7 @@ await build({
 
 ```js
 // webpack.config.js
-import VersionInjector from 'unplugin-version-injector/webpack';
+import VersionInjector from '@redstardev/unplugin-version-injector/webpack';
 
 export default {
   plugins: [VersionInjector()]
@@ -148,7 +148,7 @@ export default {
 
 ```js
 // rspack.config.js
-import VersionInjector from 'unplugin-version-injector/rspack';
+import VersionInjector from '@redstardev/unplugin-version-injector/rspack';
 
 export default {
   plugins: [VersionInjector()]
@@ -159,7 +159,7 @@ export default {
 
 ```ts
 // farm.config.ts
-import VersionInjector from 'unplugin-version-injector/farm';
+import VersionInjector from '@redstardev/unplugin-version-injector/farm';
 
 export default {
   plugins: [VersionInjector()]
@@ -244,7 +244,7 @@ The plugin accepts the following options:
 Example with custom options:
 
 ```ts
-import VersionInjector from 'unplugin-version-injector/vite';
+import VersionInjector from '@redstardev/unplugin-version-injector/vite';
 
 export default defineConfig({
   plugins: [
@@ -282,7 +282,7 @@ await esbuild.build({
 ### After
 
 ```ts
-import VersionInjector from 'unplugin-version-injector/esbuild';
+import VersionInjector from '@redstardev/unplugin-version-injector/esbuild';
 
 await esbuild.build({
   plugins: [
@@ -295,7 +295,7 @@ await esbuild.build({
 
 ### Option mapping
 
-| `esbuild-plugin-version-injector` | `unplugin-version-injector`                                                     |
+| `esbuild-plugin-version-injector` | `@redstardev/unplugin-version-injector`                                         |
 | --------------------------------- | ------------------------------------------------------------------------------- |
 | `filter` (`RegExp`)               | `include` / `exclude` (`FilterPattern`)                                         |
 | `namespace`                       | `namespace` (optional, esbuild only) — omit for global injection on all outputs |
@@ -306,9 +306,10 @@ await esbuild.build({
 
 ### Key breaking changes
 
-- The package name changed to `unplugin-version-injector`
+- The package name changed to `@redstardev/unplugin-version-injector`
 - Import from bundler-specific entry points (e.g.,
-  `unplugin-version-injector/vite`, `unplugin-version-injector/esbuild`)
+  `@redstardev/unplugin-version-injector/vite`,
+  `@redstardev/unplugin-version-injector/esbuild`)
 - `filter` was replaced by `include` / `exclude` (unplugin filter patterns;
   strings, regexps, or arrays)
 - `namespace` is optional: by default the esbuild adapter injects into **all

@@ -12,7 +12,7 @@ import { VersionInjector } from './index';
  * @example
  * ```ts
  * import { build } from 'esbuild'
- * import VersionInjector from 'unplugin-version-injector/esbuild'
+ * import VersionInjector from '@redstardev/unplugin-version-injector/esbuild'
  *
  * build({ plugins: [VersionInjector()] })
  * ```

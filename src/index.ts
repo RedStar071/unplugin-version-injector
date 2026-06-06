@@ -148,7 +148,7 @@ function buildEsbuildConfig(options: OptionsResolved) {
 export const VersionInjector: UnpluginInstance<Options | undefined> = createUnplugin((rawOptions = {}) => {
   const options = resolveOptions(rawOptions);
 
-  const name = 'unplugin-version-injector';
+  const name = '@redstardev/unplugin-version-injector';
   return {
     name,
     enforce: options.enforce,
@@ -165,7 +165,7 @@ export const VersionInjector: UnpluginInstance<Options | undefined> = createUnpl
 });
 
 /**
- * The [unplugin-version-injector](https://github.com/RedStar071/unplugin-version-injector/#readme) version
+ * The [@redstardev/unplugin-version-injector](https://github.com/RedStar071/unplugin-version-injector/#readme) version
  * that you are currently using.
  */
 //
