@@ -2,7 +2,7 @@
 
 exports[`TS based ESM > GIVEN no plugin options THEN injects version 1`] = `
 "//#region tests/fixtures/build-in/typescript.mts
-const version = "0.0.1";
+const version = "0.0.2";
 //#endregion
 export { version };
 "

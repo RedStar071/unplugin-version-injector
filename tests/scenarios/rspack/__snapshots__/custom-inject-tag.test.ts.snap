@@ -23,7 +23,7 @@ __webpack_require__.d(__webpack_exports__, {
   r: () => (version)
 });
 
-const version = "0.0.1";
+const version = "0.0.2";
 
 var __webpack_exports__version = __webpack_exports__.r;
 export { __webpack_exports__version as version };
