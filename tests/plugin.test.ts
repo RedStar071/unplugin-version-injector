@@ -1,8 +1,12 @@
+import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, test } from 'vitest';
 import type { UnpluginOptions } from 'unplugin';
 import type { Options } from '../src/core/options';
 import { VersionInjector } from '../src/index';
+
+const packageJsonPath = resolve(import.meta.dirname, '../package.json');
+const { version: packageVersion } = JSON.parse(readFileSync(packageJsonPath, 'utf8')) as { version: string };
 
 function createPlugin(options?: Options): UnpluginOptions {
   const plugin = VersionInjector.raw(options, { framework: 'rollup' });
@@ -36,10 +40,10 @@ async function transform(code: string, options?: Options) {
 describe('VersionInjector', () => {
   test('replaces inject tag with version from package.json', async () => {
     const result = await transform("export const version = '[VI]{{inject}}[/VI]'", {
-      packageJsonPath: resolve(import.meta.dirname, '../package.json')
+      packageJsonPath
     });
 
-    expect(result).toBe("export const version = '0.0.1'");
+    expect(result).toBe(`export const version = '${packageVersion}'`);
   });
 
   test('replaces inject tag with current date', async () => {
@@ -52,7 +56,7 @@ describe('VersionInjector', () => {
 
   test('returns null when inject tag is not present', async () => {
     const result = await transform("export const version = '1.0.0'", {
-      packageJsonPath: resolve(import.meta.dirname, '../package.json')
+      packageJsonPath
     });
 
     expect(result).toBeNull();
@@ -61,30 +65,30 @@ describe('VersionInjector', () => {
   test('supports custom inject tag', async () => {
     const result = await transform("export const version = '[VERSION][/VERSION]'", {
       injectTag: '[VERSION][/VERSION]',
-      packageJsonPath: resolve(import.meta.dirname, '../package.json')
+      packageJsonPath
     });
 
-    expect(result).toBe("export const version = '0.0.1'");
+    expect(result).toBe(`export const version = '${packageVersion}'`);
   });
 
   test('replaces multiple occurrences', async () => {
     const result = await transform("const a = '[VI]{{inject}}[/VI]'; const b = '[VI]{{inject}}[/VI]';", {
-      packageJsonPath: resolve(import.meta.dirname, '../package.json')
+      packageJsonPath
     });
 
-    expect(result).toBe("const a = '0.0.1'; const b = '0.0.1';");
+    expect(result).toBe(`const a = '${packageVersion}'; const b = '${packageVersion}';`);
   });
 
   test('works with CSS content', async () => {
     const handler = getTransformHandler(
       createPlugin({
-        packageJsonPath: resolve(import.meta.dirname, '../package.json')
+        packageJsonPath
       })
     );
 
     const result = await handler(".myClass { content: '[VI]{{inject}}[/VI]'; }", 'styles.css');
 
-    expect(result).toBe(".myClass { content: '0.0.1'; }");
+    expect(result).toBe(`.myClass { content: '${packageVersion}'; }`);
   });
 
   test('returns null when package.json not found', async () => {
