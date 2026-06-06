@@ -96,6 +96,7 @@
     "tsdown-preset-sxzz": "^0.6.0",
     "tsup": "^8.5.0",
     "typescript": "~5.8.3",
+    "unrun": "^0.3.1",
     "vite": "^7.2.2",
     "vitest": "^3.2.6",
     "webpack": "^5.99.9"
