@@ -1,0 +1,3 @@
+shellEmulator: true
+dedupePeers: true
+minimumReleaseAge: 1440

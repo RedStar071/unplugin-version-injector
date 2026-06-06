@@ -1,16 +1,10 @@
 import { lib } from 'tsdown-preset-sxzz';
-import rolldown from './src/rolldown';
 
 export default lib(
   {
     entry: 'shallow'
   },
   {
-    plugins: [
-      rolldown({
-        injectTag: '[InternalVi]{{internal-inject}}[/InternalVi]'
-      })
-    ],
     deps: {
       neverBundle: [
         'unplugin',

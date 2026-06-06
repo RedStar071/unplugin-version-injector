@@ -63,7 +63,7 @@ var __webpack_exports__ = {};
 /* harmony export */   r: () => (/* binding */ version)
 /* harmony export */ });
 
-const version = "2026-06-06T11:26:21.010Z";
+const version = "2022-02-01T14:30:30.000Z";
 
 const __webpack_exports__version = __webpack_exports__.r;
 export { __webpack_exports__version as version };

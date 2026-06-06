@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { rollup } from 'rollup';
 import esbuildRollupPlugin from 'rollup-plugin-esbuild';
 import { defineConfig, type Options as TsupOptions } from 'tsup';
-import { build as viteBuild } from 'vite';
+import { build as viteBuild, type PluginOption } from 'vite';
 import webpack from 'webpack';
 import { rspack } from '@rspack/core';
 import { rolldown } from 'rolldown';
@@ -106,7 +106,7 @@ async function buildVite(input: BundlerBuildInput): Promise<void> {
 
   await viteBuild({
     configFile: false,
-    plugins: [VersionInjectorVite(input.pluginOptions)],
+    plugins: [VersionInjectorVite(input.pluginOptions) as PluginOption],
     build: {
       outDir: buildAbsolutePath('../fixtures/build-out/vite'),
       emptyOutDir: false,
@@ -148,7 +148,7 @@ async function buildRspack(input: BundlerBuildInput): Promise<void> {
 
 async function runWebpackLikeBundler(
   bundler: typeof webpack | typeof rspack,
-  plugin: webpack.WebpackPluginInstance,
+  plugin: webpack.WebpackPluginInstance | ReturnType<typeof VersionInjectorRspack>,
   input: BundlerBuildInput,
   ext: 'mjs' | 'cjs',
   isEsm: boolean
@@ -164,7 +164,7 @@ async function runWebpackLikeBundler(
   }
 
   await new Promise<void>((resolvePromise, reject) => {
-    const compiler = bundler({
+    const compiler = (bundler as typeof webpack)({
       mode: 'production',
       entry: input.entry,
       output: {
@@ -177,10 +177,10 @@ async function runWebpackLikeBundler(
       experiments: isEsm ? { outputModule: true } : undefined,
       module: { rules },
       optimization: { minimize: false },
-      plugins: [plugin]
+      plugins: [plugin as webpack.WebpackPluginInstance]
     });
 
-    compiler.run((error, stats) => {
+    compiler.run((error: Error | null | undefined, stats?: webpack.Stats) => {
       compiler.close(() => undefined);
 
       if (error) {
@@ -240,8 +240,11 @@ export function createTsupConfig(tsupOptions: TsupOptions, pluginOptions?: Optio
   }) as TsupOptions;
 }
 
+const ISO_DATE_PATTERN = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/g;
+const NORMALIZED_DATE = '2022-02-01T14:30:30.000Z';
+
 export async function assertFileContent(filePath: string) {
-  const fileContent = await readFile(buildAbsolutePath(filePath), { encoding: 'utf-8' });
+  const fileContent = (await readFile(buildAbsolutePath(filePath), { encoding: 'utf-8' })).replace(ISO_DATE_PATTERN, NORMALIZED_DATE);
   expect(fileContent).toMatchSnapshot();
 }
 

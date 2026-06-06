@@ -59,7 +59,7 @@ exports[`JS based CJS > GIVEN versionOrCurrentDate = "current-date" THEN injects
 (module) {
 
 module.exports = {
-  version: '2026-06-06T11:26:20.350Z'
+  version: '2022-02-01T14:30:30.000Z'
 };
 
 

@@ -3,32 +3,44 @@
   "type": "module",
   "version": "2.0.1",
   "description": "A universal plugin to inject your application's version number or today's date into your files. Supports Vite, Rollup, Rolldown, webpack, Rspack, esbuild, and Farm.",
-  "author": {
-    "name": "RedStar071",
-    "url": "https://redstar071.dev",
-    "email": "support@redstar071.dev"
+  "keywords": [
+    "esbuild",
+    "farm",
+    "inject",
+    "rolldown",
+    "rollup",
+    "rspack",
+    "unplugin",
+    "version",
+    "vite",
+    "webpack"
+  ],
+  "homepage": "https://redstar071.dev",
+  "bugs": {
+    "url": "https://github.com/RedStar071/unplugin-version-injector/issues"
   },
   "license": "MIT",
-  "homepage": "https://redstar071.dev",
+  "author": {
+    "name": "RedStar071",
+    "email": "support@redstar071.dev",
+    "url": "https://redstar071.dev"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RedStar071/unplugin-version-injector.git"
   },
-  "bugs": {
-    "url": "https://github.com/RedStar071/unplugin-version-injector/issues"
-  },
-  "keywords": [
-    "unplugin",
-    "version",
-    "inject",
-    "vite",
-    "webpack",
-    "rspack",
-    "rollup",
-    "rolldown",
-    "esbuild",
-    "farm"
+  "files": [
+    "dist"
   ],
+  "type": "module",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*.d.ts",
+        "./*"
+      ]
+    }
+  },
   "exports": {
     ".": "./dist/index.js",
     "./api": "./dist/api.js",
@@ -41,23 +53,8 @@
     "./webpack": "./dist/webpack.js",
     "./package.json": "./package.json"
   },
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*.d.ts",
-        "./*"
-      ]
-    }
-  },
-  "files": [
-    "dist"
-  ],
   "publishConfig": {
     "access": "public"
-  },
-  "engines": {
-    "node": ">=20",
-    "pnpm": ">=10"
   },
   "scripts": {
     "lint": "oxlint && oxfmt --check",
@@ -72,6 +69,37 @@
     "typecheck": "tsc --noEmit",
     "prepack": "pnpm run build",
     "prepare": "node .husky/install.mjs"
+  },
+  "dependencies": {
+    "@sapphire/result": "^2.8.0",
+    "unplugin": "^3.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@favware/cliff-jumper": "^6.1.0",
+    "@rspack/core": "^1.4.11",
+    "@types/node": "^22.19.0",
+    "@vitest/coverage-v8": "^3.2.6",
+    "autoprefixer": "^10.4.21",
+    "esbuild": "^0.25.12",
+    "esbuild-loader": "^4.4.2",
+    "esbuild-sass-plugin": "^3.3.1",
+    "husky": "^9.1.7",
+    "nano-staged": "^1.0.2",
+    "oxfmt": "^0.53.0",
+    "oxlint": "^1.68.0",
+    "postcss": "^8.5.6",
+    "rolldown": "^1.1.0",
+    "rollup": "^4.44.0",
+    "rollup-plugin-esbuild": "^6.2.1",
+    "tsdown": "^0.22.2",
+    "tsdown-preset-sxzz": "^0.6.0",
+    "tsup": "^8.5.0",
+    "typescript": "~5.8.3",
+    "vite": "^7.2.2",
+    "vitest": "^3.2.6",
+    "webpack": "^5.99.9"
   },
   "peerDependencies": {
     "@farmfe/core": ">=1",
@@ -99,40 +127,9 @@
       "optional": true
     }
   },
-  "dependencies": {
-    "@sapphire/result": "^2.8.0",
-    "unplugin": "^3.0.0"
-  },
-  "devDependencies": {
-    "husky": "^9.1.7",
-    "nano-staged": "^1.0.2",
-    "@commitlint/cli": "^20.1.0",
-    "@commitlint/config-conventional": "^20.0.0",
-    "@favware/cliff-jumper": "^6.1.0",
-    "@rspack/core": "^1.4.11",
-    "@types/node": "^22.19.0",
-    "@vitest/coverage-v8": "^3.2.6",
-    "autoprefixer": "^10.4.21",
-    "esbuild": "^0.25.12",
-    "esbuild-loader": "^4.4.2",
-    "esbuild-sass-plugin": "^3.3.1",
-    "oxfmt": "^0.16.0",
-    "oxlint": "^1.16.0",
-    "postcss": "^8.5.6",
-    "rolldown": "^1.1.0",
-    "rollup": "^4.44.0",
-    "rollup-plugin-esbuild": "^6.2.1",
-    "tsdown": "^0.22.2",
-    "tsdown-preset-sxzz": "^0.6.0",
-    "tsup": "^8.5.0",
-    "typescript": "~5.8.3",
-    "vite": "^7.2.2",
-    "vitest": "^3.2.6",
-    "webpack": "^5.99.9"
-  },
-  "lint-staged": {
-    "*": "prettier --ignore-unknown --write",
-    "*.{mjs,js,ts}": "eslint --fix --ext mjs,js,ts"
+  "nano-staged": {
+    "*.{js,ts,cjs,mjs,cts,mts,json,jsonc,md,yml,yaml}": "oxfmt",
+    "*.{js,ts,cjs,mjs,cts,mts}": "oxlint --fix"
   },
   "commitlint": {
     "extends": [
@@ -144,9 +141,9 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "nano-staged": {
-    "*.{js,ts,cjs,mjs,cts,mts,json,jsonc,md,yml,yaml}": "oxfmt",
-    "*.{js,ts,cjs,mjs,cts,mts}": "oxlint --fix"
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=10"
   },
   "packageManager": "pnpm@10.11.0"
 }
