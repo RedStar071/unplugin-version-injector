@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`JS based ESM > GIVEN no plugin options THEN injects version 1`] = `
-"const version = '2.0.0';
+"const version = '0.0.1';
 
 export { version };
 "
