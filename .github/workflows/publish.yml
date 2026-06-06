@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   publish:
-    name: Publish unplugin-version-injector
+    name: Publish @redstardev/unplugin-version-injector
     runs-on: ubuntu-latest
     permissions:
       contents: write

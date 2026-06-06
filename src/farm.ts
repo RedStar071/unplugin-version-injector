@@ -12,7 +12,7 @@ import { VersionInjector } from './index';
  * @example
  * ```ts
  * // farm.config.js
- * import VersionInjector from 'unplugin-version-injector/farm'
+ * import VersionInjector from '@redstardev/unplugin-version-injector/farm'
  *
  * export default {
  *   plugins: [VersionInjector()],

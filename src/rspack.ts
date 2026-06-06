@@ -12,7 +12,7 @@ import { VersionInjector } from './index';
  * @example
  * ```js
  * // rspack.config.js
- * import VersionInjector from 'unplugin-version-injector/rspack'
+ * import VersionInjector from '@redstardev/unplugin-version-injector/rspack'
  *
  * export default {
  *   plugins: [VersionInjector()],

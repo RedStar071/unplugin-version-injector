@@ -12,7 +12,7 @@ import { VersionInjector } from './index';
  * @example
  * ```ts
  * // vite.config.ts
- * import VersionInjector from 'unplugin-version-injector/vite'
+ * import VersionInjector from '@redstardev/unplugin-version-injector/vite'
  *
  * export default defineConfig({
  *   plugins: [VersionInjector()],

@@ -12,7 +12,7 @@ import { VersionInjector } from './index';
  * @example
  * ```js
  * // webpack.config.js
- * import VersionInjector from 'unplugin-version-injector/webpack'
+ * import VersionInjector from '@redstardev/unplugin-version-injector/webpack'
  *
  * export default {
  *   plugins: [VersionInjector()],

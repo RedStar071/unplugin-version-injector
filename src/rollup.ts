@@ -12,7 +12,7 @@ import { VersionInjector } from './index';
  * @example
  * ```ts
  * // rollup.config.js
- * import VersionInjector from 'unplugin-version-injector/rollup'
+ * import VersionInjector from '@redstardev/unplugin-version-injector/rollup'
  *
  * export default {
  *   plugins: [VersionInjector()],
