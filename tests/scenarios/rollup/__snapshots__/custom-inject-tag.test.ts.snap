@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Custom Version Inject Tag > GIVEN custom tag THEN injects version 1`] = `
+"const version = "2.0.0";
+
+export { version };
+"
+`;

@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Custom Version Inject Tag > GIVEN custom tag THEN injects version 1`] = `
+"// The require scope
+var __webpack_require__ = {};
+
+// webpack/runtime/define_property_getters
+(() => {
+__webpack_require__.d = (exports, definition) => {
+	for(var key in definition) {
+        if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+            Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+        }
+    }
+};
+})();
+// webpack/runtime/has_own_property
+(() => {
+__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+})();
+var __webpack_exports__ = {};
+__webpack_require__.d(__webpack_exports__, {
+  r: () => (version)
+});
+
+const version = "2.0.0";
+
+var __webpack_exports__version = __webpack_exports__.r;
+export { __webpack_exports__version as version };
+"
+`;

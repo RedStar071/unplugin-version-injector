@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Config > GIVEN custom include pattern THEN still injects matching files 1`] = `
+"// tests/fixtures/build-in/typescript.mts
+var version = "2.0.0";
+
+export { version };
+"
+`;
+
+exports[`Config > GIVEN custom packageJsonPath THEN injects version from that file 1`] = `
+"// tests/fixtures/build-in/typescript.mts
+var version = "2.0.0";
+
+export { version };
+"
+`;

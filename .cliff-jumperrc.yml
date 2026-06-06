@@ -1,0 +1,10 @@
+name: unplugin-version-injector
+packagePath: .
+commitMessageTemplate: 'chore(release): release {{new-version}}'
+tagTemplate: v{{new-version}}
+identifierBase: false
+pushTag: true
+githubRelease: true
+githubReleaseLatest: true
+gitRepo: RedStar071/unplugin-version-injector
+gitHostVariant: github

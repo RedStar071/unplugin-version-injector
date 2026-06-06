@@ -1,0 +1,14 @@
+node_modules
+.DS_Store
+dist
+*.log
+.oxlintcache
+coverage/
+
+# Test output
+tests/fixtures/build-mid/
+tests/fixtures/build-out/
+
+.pnpm-store/
+
+.claude/state

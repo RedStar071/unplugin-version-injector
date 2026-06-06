@@ -1,0 +1,43 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`JS based CJS > GIVEN no plugin options THEN injects version 1`] = `
+""use strict";
+function getDefaultExportFromCjs(x) {
+  return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
+}
+var javascript$1;
+var hasRequiredJavascript;
+function requireJavascript() {
+  if (hasRequiredJavascript) return javascript$1;
+  hasRequiredJavascript = 1;
+  javascript$1 = {
+    version: "2.0.0"
+  };
+  return javascript$1;
+}
+var javascriptExports = requireJavascript();
+const javascript = /* @__PURE__ */ getDefaultExportFromCjs(javascriptExports);
+module.exports = javascript;
+"
+`;
+
+exports[`JS based CJS > GIVEN versionOrCurrentDate = "current-date" THEN injects current date 1`] = `
+""use strict";
+function getDefaultExportFromCjs(x) {
+  return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
+}
+var javascript$1;
+var hasRequiredJavascript;
+function requireJavascript() {
+  if (hasRequiredJavascript) return javascript$1;
+  hasRequiredJavascript = 1;
+  javascript$1 = {
+    version: "2022-02-01T14:30:30.000Z"
+  };
+  return javascript$1;
+}
+var javascriptExports = requireJavascript();
+const javascript = /* @__PURE__ */ getDefaultExportFromCjs(javascriptExports);
+module.exports = javascript;
+"
+`;

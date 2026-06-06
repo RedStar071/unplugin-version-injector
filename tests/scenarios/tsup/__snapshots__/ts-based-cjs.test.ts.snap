@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TS based CJS > GIVEN no plugin options THEN injects version 1`] = `
+"'use strict';
+
+// tests/fixtures/build-in/typescript.cts
+var version = "2.0.0";
+
+exports.version = version;
+"
+`;
+
+exports[`TS based CJS > GIVEN versionOrCurrentDate = "current-date" THEN injects current date 1`] = `
+"'use strict';
+
+// tests/fixtures/build-in/typescript.cts
+var version = "2022-02-01T14:30:30.000Z";
+
+exports.version = version;
+"
+`;

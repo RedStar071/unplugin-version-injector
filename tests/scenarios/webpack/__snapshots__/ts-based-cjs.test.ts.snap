@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TS based CJS > GIVEN no plugin options THEN injects version 1`] = `
+"/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/* unused harmony export version */
+
+const version = "2.0.0";
+
+/******/ })()
+;"
+`;
+
+exports[`TS based CJS > GIVEN versionOrCurrentDate = "current-date" THEN injects current date 1`] = `
+"/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/* unused harmony export version */
+
+const version = "2026-06-06T11:26:21.697Z";
+
+/******/ })()
+;"
+`;
