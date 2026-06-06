@@ -1,6 +1,6 @@
-import { lib } from 'tsdown-preset-sxzz';
+import { nodeLib } from 'tsdown-preset-sxzz';
 
-export default lib(
+export default nodeLib(
   {
     entry: 'shallow'
   },
