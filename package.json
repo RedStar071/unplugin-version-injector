@@ -1,6 +1,6 @@
 {
   "name": "@redstardev/unplugin-version-injector",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A universal plugin to inject your application's version number or today's date into your files. Supports Vite, Rollup, Rolldown, webpack, Rspack, esbuild, and Farm.",
   "keywords": [
     "esbuild",
