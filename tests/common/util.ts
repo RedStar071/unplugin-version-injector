@@ -243,8 +243,16 @@ export function createTsupConfig(tsupOptions: TsupOptions, pluginOptions?: Optio
 const ISO_DATE_PATTERN = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/g;
 const NORMALIZED_DATE = '2022-02-01T14:30:30.000Z';
 
+function normalizeSnapshotContent(content: string): string {
+  return content
+    .replace(ISO_DATE_PATTERN, NORMALIZED_DATE)
+    .replace(/\/\*\*\*\/ \d+/g, '/***/ MODULE_ID')
+    .replace(/^\d+\(module\)/gm, 'MODULE_ID(module)')
+    .replace(/__webpack_require__\(\d+\)/g, '__webpack_require__(MODULE_ID)');
+}
+
 export async function assertFileContent(filePath: string) {
-  const fileContent = (await readFile(buildAbsolutePath(filePath), { encoding: 'utf-8' })).replace(ISO_DATE_PATTERN, NORMALIZED_DATE);
+  const fileContent = normalizeSnapshotContent(await readFile(buildAbsolutePath(filePath), { encoding: 'utf-8' }));
   expect(fileContent).toMatchSnapshot();
 }
 

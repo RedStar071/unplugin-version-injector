@@ -4,7 +4,7 @@ exports[`JS based CJS > GIVEN no plugin options THEN injects version 1`] = `
 "/******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 223
+/***/ MODULE_ID
 (module) {
 
 module.exports = {
@@ -45,7 +45,7 @@ module.exports = {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__(223);
+/******/ 	var __webpack_exports__ = __webpack_require__(MODULE_ID);
 /******/ 	
 /******/ })()
 ;"
@@ -55,7 +55,7 @@ exports[`JS based CJS > GIVEN versionOrCurrentDate = "current-date" THEN injects
 "/******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 223
+/***/ MODULE_ID
 (module) {
 
 module.exports = {
@@ -96,7 +96,7 @@ module.exports = {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__(223);
+/******/ 	var __webpack_exports__ = __webpack_require__(MODULE_ID);
 /******/ 	
 /******/ })()
 ;"

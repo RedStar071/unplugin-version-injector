@@ -3,7 +3,7 @@
 exports[`JS based CJS > GIVEN no plugin options THEN injects version 1`] = `
 "(() => {
 var __webpack_modules__ = ({
-410(module) {
+MODULE_ID(module) {
 module.exports = {
   version: '0.0.1'
 };
@@ -46,7 +46,7 @@ __webpack_require__.ruid = "bundler=rspack@1.7.11";
 // startup
 // Load entry module and return exports
 // This entry module is referenced by other modules so it can't be inlined
-var __webpack_exports__ = __webpack_require__(410);
+var __webpack_exports__ = __webpack_require__(MODULE_ID);
 })()
 ;"
 `;
@@ -54,7 +54,7 @@ var __webpack_exports__ = __webpack_require__(410);
 exports[`JS based CJS > GIVEN versionOrCurrentDate = "current-date" THEN injects current date 1`] = `
 "(() => {
 var __webpack_modules__ = ({
-410(module) {
+MODULE_ID(module) {
 module.exports = {
   version: '2022-02-01T14:30:30.000Z'
 };
@@ -97,7 +97,7 @@ __webpack_require__.ruid = "bundler=rspack@1.7.11";
 // startup
 // Load entry module and return exports
 // This entry module is referenced by other modules so it can't be inlined
-var __webpack_exports__ = __webpack_require__(410);
+var __webpack_exports__ = __webpack_require__(MODULE_ID);
 })()
 ;"
 `;
