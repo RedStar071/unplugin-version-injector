@@ -2,7 +2,7 @@ import autoprefixer from 'autoprefixer';
 import esbuild, { type BuildOptions } from 'esbuild';
 import { sassPlugin } from 'esbuild-sass-plugin';
 import postcss from 'postcss';
-import VersionInjector from '../../../dist/esbuild.js';
+import VersionInjector from '../../../dist/esbuild.mjs';
 import { assertFileContent, buildAbsolutePath } from '../../common/util';
 
 const midConfig: BuildOptions = {

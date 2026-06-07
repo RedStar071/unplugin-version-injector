@@ -9,12 +9,12 @@ import { build as viteBuild, type PluginOption } from 'vite';
 import webpack from 'webpack';
 import { rspack } from '@rspack/core';
 import { rolldown } from 'rolldown';
-import VersionInjectorEsbuild from '../../dist/esbuild.js';
-import VersionInjectorRollup from '../../dist/rollup.js';
-import VersionInjectorRolldown from '../../dist/rolldown.js';
-import VersionInjectorVite from '../../dist/vite.js';
-import VersionInjectorWebpack from '../../dist/webpack.js';
-import VersionInjectorRspack from '../../dist/rspack.js';
+import VersionInjectorEsbuild from '../../dist/esbuild.mjs';
+import VersionInjectorRollup from '../../dist/rollup.mjs';
+import VersionInjectorRolldown from '../../dist/rolldown.mjs';
+import VersionInjectorVite from '../../dist/vite.mjs';
+import VersionInjectorWebpack from '../../dist/webpack.mjs';
+import VersionInjectorRspack from '../../dist/rspack.mjs';
 import type { Options } from '../../src/core/options';
 import { VersionInjector as VersionInjectorSource } from '../../src/index';
 
