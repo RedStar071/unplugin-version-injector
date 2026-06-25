@@ -52,7 +52,7 @@ exports[`SCSS to CSS > GIVEN no plugin options THEN injects version 1`] = `
 exports[`SCSS to CSS > GIVEN no plugin options THEN injects version 2`] = `
 "/* tests/fixtures/build-mid/css/styles.css */
 .myClass {
-  content: "0.0.3";
+  content: "0.0.4";
 }
 .start-test-btn {
   border: 2px solid #a6a6a6;
