@@ -28,7 +28,7 @@ var __webpack_exports__ = {};
 /* harmony export */   r: () => (/* binding */ version)
 /* harmony export */ });
 
-const version = "0.0.2";
+const version = "0.0.3";
 
 const __webpack_exports__version = __webpack_exports__.r;
 export { __webpack_exports__version as version };

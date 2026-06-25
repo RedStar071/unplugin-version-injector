@@ -5,7 +5,7 @@ exports[`JS based CJS > GIVEN no plugin options THEN injects version 1`] = `
 var __webpack_modules__ = ({
 MODULE_ID(module) {
 module.exports = {
-  version: '0.0.2'
+  version: '0.0.3'
 };
 
 
