@@ -11,7 +11,7 @@ function requireJavascript() {
   if (hasRequiredJavascript) return javascript$1;
   hasRequiredJavascript = 1;
   javascript$1 = {
-    version: "0.0.2"
+    version: "0.0.4"
   };
   return javascript$1;
 }

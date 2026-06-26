@@ -1,3 +1,7 @@
 shellEmulator: true
 dedupePeers: true
 minimumReleaseAge: 1440
+allowBuilds:
+  '@parcel/watcher': true
+  core-js: true
+  esbuild: true

@@ -36,7 +36,7 @@ __webpack_require__.rv = () => ("1.7.11")
 __webpack_require__.ruid = "bundler=rspack@1.7.11";
 })();
 
-const version = "0.0.2";
+const version = "0.0.4";
 
 })()
 ;"

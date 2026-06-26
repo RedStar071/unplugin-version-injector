@@ -3,7 +3,7 @@
 exports[`TS based CJS > GIVEN no plugin options THEN injects version 1`] = `
 ""use strict";
 Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
-const version = "0.0.2";
+const version = "0.0.4";
 exports.version = version;
 "
 `;
