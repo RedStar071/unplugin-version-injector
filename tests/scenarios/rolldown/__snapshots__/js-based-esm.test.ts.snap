@@ -2,7 +2,7 @@
 
 exports[`JS based ESM > GIVEN no plugin options THEN injects version 1`] = `
 "//#region tests/fixtures/build-in/javascript.mjs
-const version = "0.0.4";
+const version = "0.0.5";
 //#endregion
 export { version };
 "

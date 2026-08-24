@@ -9,7 +9,7 @@ const packageJsonPath = resolve(import.meta.dirname, '../package.json');
 const { version: packageVersion } = JSON.parse(readFileSync(packageJsonPath, 'utf8')) as { version: string };
 
 function createPlugin(options?: Options): UnpluginOptions {
-  const plugin = VersionInjector.raw(options, { framework: 'rollup' });
+  const plugin = VersionInjector.raw(options, { framework: 'rollup', versions: {} });
   if (Array.isArray(plugin)) {
     throw new Error('Expected a single plugin');
   }
