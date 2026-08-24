@@ -30,6 +30,7 @@
     "prepack": "yarn build"
   },
   "dependencies": {
+    "unplugin": "^2.3.4",
     "@sapphire/result": "^2.8.0"
   },
   "devDependencies": {
@@ -57,6 +58,38 @@
     "typescript": "^5.8.3",
     "vite": "^7.2.2",
     "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "@farmfe/core": ">=1",
+    "@nuxt/kit": "^3",
+    "@nuxt/schema": "^3",
+    "esbuild": "*",
+    "rollup": "^3",
+    "vite": ">=3",
+    "webpack": "^4 || ^5"
+  },
+  "peerDependenciesMeta": {
+    "@farmfe/core": {
+      "optional": true
+    },
+    "@nuxt/kit": {
+      "optional": true
+    },
+    "@nuxt/schema": {
+      "optional": true
+    },
+    "esbuild": {
+      "optional": true
+    },
+    "rollup": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    },
+    "webpack": {
+      "optional": true
+    }
   },
   "repository": {
     "type": "git",
