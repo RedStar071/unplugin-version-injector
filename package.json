@@ -1,11 +1,12 @@
 {
   "name": "@redstardev/unplugin-version-injector",
   "version": "0.0.5",
-  "description": "A universal plugin to inject your application's version number or today's date into your files. Supports Vite, Rollup, Rolldown, webpack, Rspack, esbuild, and Farm.",
+  "description": "A universal plugin to inject your application's version number or today's date into your files. Supports Vite, Rollup, Rolldown, webpack, Rspack, esbuild, Farm, and Nuxt.",
   "keywords": [
     "esbuild",
     "farm",
     "inject",
+    "nuxt",
     "rolldown",
     "rollup",
     "rspack",
@@ -45,6 +46,7 @@
     "./api": "./dist/api.mjs",
     "./esbuild": "./dist/esbuild.mjs",
     "./farm": "./dist/farm.mjs",
+    "./nuxt": "./dist/nuxt.mjs",
     "./rolldown": "./dist/rolldown.mjs",
     "./rollup": "./dist/rollup.mjs",
     "./rspack": "./dist/rspack.mjs",
@@ -103,8 +105,8 @@
   },
   "peerDependencies": {
     "@farmfe/core": ">=1",
-    "@nuxt/kit": "^3",
-    "@nuxt/schema": "^3",
+    "@nuxt/kit": "^4",
+    "@nuxt/schema": "^4",
     "esbuild": "*",
     "rollup": "^3",
     "vite": ">=3",
