@@ -29,6 +29,7 @@ _This plugin was inspired by
     - [With Webpack](#with-webpack)
     - [With Rspack](#with-rspack)
     - [With Farm](#with-farm)
+    - [With Nuxt](#with-nuxt)
   - [File Injection examples](#file-injection-examples)
     - [JavaScript / TypeScript](#javascript--typescript)
     - [JSON](#json)
@@ -166,6 +167,18 @@ export default {
 };
 ```
 
+### With [Nuxt][nuxt]
+
+```ts
+// nuxt.config.ts
+export default defineNuxtConfig({
+  modules: ['@redstardev/unplugin-version-injector/nuxt'],
+  versionInjector: {
+    // options
+  }
+});
+```
+
 [vite]: https://vite.dev/
 [rollup]: https://rollupjs.org/
 [rolldown]: https://rolldown.rs/
@@ -174,6 +187,7 @@ export default {
 [webpack]: https://webpack.js.org/
 [rspack]: https://rspack.dev/
 [farm]: https://www.farmfe.org/
+[nuxt]: https://nuxt.com/
 
 ## File Injection examples
 
