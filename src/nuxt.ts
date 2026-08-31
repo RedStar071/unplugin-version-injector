@@ -30,8 +30,11 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'versionInjector'
   },
   defaults: {},
-  setup(options) {
-    addVitePlugin(() => VersionInjector.vite(options));
-    addWebpackPlugin(() => VersionInjector.webpack(options));
+  setup(options, nuxt) {
+    if (nuxt.options.builder === '@nuxt/webpack-builder') {
+      addWebpackPlugin(() => VersionInjector.webpack(options));
+    } else {
+      addVitePlugin(() => VersionInjector.vite(options));
+    }
   }
 });
