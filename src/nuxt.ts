@@ -4,7 +4,7 @@
  * @module
  */
 
-import { addVitePlugin, addWebpackPlugin, defineNuxtModule } from '@nuxt/kit';
+import { addRspackPlugin, addVitePlugin, addWebpackPlugin, defineNuxtModule } from '@nuxt/kit';
 import type { Options } from './core/options';
 import { VersionInjector } from './index';
 
@@ -31,10 +31,18 @@ export default defineNuxtModule<ModuleOptions>({
   },
   defaults: {},
   setup(options, nuxt) {
-    if (nuxt.options.builder === '@nuxt/webpack-builder') {
-      addWebpackPlugin(() => VersionInjector.webpack(options));
-    } else {
-      addVitePlugin(() => VersionInjector.vite(options));
+    switch (nuxt.options.builder) {
+      case '@nuxt/webpack-builder':
+        addWebpackPlugin(() => VersionInjector.webpack(options));
+        break;
+      case '@nuxt/rspack-builder':
+        addRspackPlugin(() => VersionInjector.rspack(options));
+        break;
+      case '@nuxt/vite-builder':
+        addVitePlugin(() => VersionInjector.vite(options));
+        break;
+      default:
+        throw new Error(`[@redstardev/unplugin-version-injector] Unsupported Nuxt builder: "${String(nuxt.options.builder)}"`);
     }
   }
 });
