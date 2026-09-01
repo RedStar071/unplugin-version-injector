@@ -220,7 +220,7 @@ export function createTsupConfig(tsupOptions: TsupOptions, pluginOptions?: Optio
     tsconfig: buildAbsolutePath('../fixtures/build-in/tsconfig.json'),
     keepNames: true,
     treeshake: true,
-    outDir: buildAbsolutePath('../fixtures/build-out/tsup'),
+    outDir: tsupOptions.outDir ?? buildAbsolutePath('../fixtures/build-out/tsup'),
     bundle: true,
     platform: 'node',
     splitting: false,
@@ -257,5 +257,8 @@ export async function assertFileContent(filePath: string) {
 }
 
 export function buildAbsolutePath(filePath: string) {
-  return resolve(__dirname, filePath);
+  // Use forward slashes even on Windows: tsup resolves array-style `entry`
+  // paths through tinyglobby, which treats backslashes as glob escapes and
+  // fails to match native Windows paths.
+  return resolve(__dirname, filePath).replaceAll('\\', '/');
 }
