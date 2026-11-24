@@ -40,7 +40,7 @@ exports[`Custom Version Inject Tag > GIVEN custom tag THEN injects version 1`] =
 /************************************************************************/
 let __webpack_exports__ = {};
 
-const version = "0.0.5";
+const version = "0.0.6";
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, [
 /* harmony export */   "r", 0, /* binding */ version
