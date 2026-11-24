@@ -2,18 +2,16 @@
 
 exports[`TS based CJS > GIVEN no plugin options THEN injects version 1`] = `
 "Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
-//#region tests/fixtures/build-in/typescript.cts
+// tests/fixtures/build-in/typescript.cts
 const version = "0.0.6";
-//#endregion
 exports.version = version;
 "
 `;
 
 exports[`TS based CJS > GIVEN versionOrCurrentDate = "current-date" THEN injects current date 1`] = `
 "Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
-//#region tests/fixtures/build-in/typescript.cts
+// tests/fixtures/build-in/typescript.cts
 const version = "2022-02-01T14:30:30.000Z";
-//#endregion
 exports.version = version;
 "
 `;

@@ -8,7 +8,7 @@ exports[`JS based CJS > GIVEN no plugin options THEN injects version 1`] = `
 (module) {
 
 module.exports = {
-  version: '0.0.6'
+  ...(/* unused pure expression */ null && ('0.0.6'))
 };
 
 
@@ -44,7 +44,7 @@ module.exports = {
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	// This entry module used 'module' so it can't be inlined
 /******/ 	let __webpack_exports__ = __webpack_require__(MODULE_ID);
 /******/ 	
 /******/ })()
@@ -59,7 +59,7 @@ exports[`JS based CJS > GIVEN versionOrCurrentDate = "current-date" THEN injects
 (module) {
 
 module.exports = {
-  version: '2022-02-01T14:30:30.000Z'
+  ...(/* unused pure expression */ null && ('2022-02-01T14:30:30.000Z'))
 };
 
 
@@ -95,7 +95,7 @@ module.exports = {
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	// This entry module used 'module' so it can't be inlined
 /******/ 	let __webpack_exports__ = __webpack_require__(MODULE_ID);
 /******/ 	
 /******/ })()
