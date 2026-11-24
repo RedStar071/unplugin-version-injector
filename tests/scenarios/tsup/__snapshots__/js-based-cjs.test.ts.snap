@@ -5,14 +5,18 @@ exports[`JS based CJS > GIVEN no plugin options THEN injects version 1`] = `
 
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __commonJS = (cb, mod) => function __require() {
-  return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+  try {
+    return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+  } catch (e) {
+    throw mod = 0, e;
+  }
 };
 
 // tests/fixtures/build-in/javascript.cjs
 var require_javascript = __commonJS({
   "tests/fixtures/build-in/javascript.cjs"(exports, module) {
     module.exports = {
-      version: "0.0.5"
+      version: "0.0.6"
     };
   }
 });
@@ -27,7 +31,11 @@ exports[`JS based CJS > GIVEN versionOrCurrentDate = "current-date" THEN injects
 
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __commonJS = (cb, mod) => function __require() {
-  return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+  try {
+    return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+  } catch (e) {
+    throw mod = 0, e;
+  }
 };
 
 // tests/fixtures/build-in/javascript.cjs
